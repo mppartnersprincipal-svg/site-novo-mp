@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     siteName: "M|P Assessoria",
   },
+  twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
 };
 

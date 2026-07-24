@@ -52,68 +52,71 @@
   --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-/* Reset / base */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/* Reset / base — dentro de @layer base para que as utilities do Tailwind
+   (em @layer utilities) tenham prioridade; CSS sem camada venceria tudo. */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-html {
-  scroll-behavior: smooth;
-}
+  html {
+    scroll-behavior: smooth;
+  }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--mp-paper);
-  color: var(--mp-ink);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  min-height: 100dvh;
-}
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--mp-paper);
+    color: var(--mp-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100dvh;
+  }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-heading);
-  margin: 0;
-}
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    margin: 0;
+  }
 
-p {
-  margin: 0;
-}
+  p {
+    margin: 0;
+  }
 
-/* Focus visível padrão */
-:focus-visible {
-  outline: 2px solid var(--mp-gold);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
+  /* Focus visível padrão */
+  :focus-visible {
+    outline: 2px solid var(--mp-gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
 
-/* Botão sem default feio */
-button {
-  font: inherit;
-  color: inherit;
-  background: none;
-  border: 0;
-  cursor: pointer;
-}
+  /* Botão sem default feio */
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
 
-input,
-textarea,
-select {
-  font: inherit;
-  color: inherit;
-}
+  input,
+  textarea,
+  select {
+    font: inherit;
+    color: inherit;
+  }
 
-/* Selection */
-::selection {
-  background: var(--mp-gold);
-  color: var(--mp-ink-deep);
+  /* Selection */
+  ::selection {
+    background: var(--mp-gold);
+    color: var(--mp-ink-deep);
+  }
 }
 
 /* Reduced motion: respeita preferência */

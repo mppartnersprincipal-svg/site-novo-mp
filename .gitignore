@@ -28,3 +28,4 @@ npm-debug.log*
 
 # original brand assets (kept local only)
 brand-assets/
+.gstack/

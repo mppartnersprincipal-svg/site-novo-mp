@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(New-Item -ItemType Directory -Force \"brand-assets\")",
+      "PowerShell(Move-Item -LiteralPath \"Fotos dos S�cios - Marcos e Pedro\" -Destination \"brand-assets\\\\fotos-socios\")",
+      "PowerShell(Move-Item -LiteralPath \"Logo da MP\" -Destination \"brand-assets\\\\logo-mp\")",
+      "PowerShell(Move-Item -LiteralPath \"Logos Clientes\" -Destination \"brand-assets\\\\logos-clientes\")",
+      "PowerShell(git init)",
+      "PowerShell(npm install)"
+    ]
+  }
+}

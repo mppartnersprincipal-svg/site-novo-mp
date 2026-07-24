@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+/* =========================================================================
+   M|P Assessoria — Site institucional
+   Ouro oficial extraído do PDF do logo (#FFC437).
+   ========================================================================= */
+
+:root {
+  /* ---- ÚNICA fonte do ouro: trocar esta linha re-skinna o site ---- */
+  --mp-gold:       #FFC437;
+  --mp-gold-deep:  #E6AE1C;   /* hover de CTA (~12% mais escuro) */
+  --mp-gold-soft:  #FFF8E7;   /* fundo sutil dourado (badges, destaques) */
+
+  /* Neutros */
+  --mp-ink:        #1A1A1A;   /* seções escuras, header, footer, títulos */
+  --mp-ink-deep:   #111111;
+  --mp-paper:      #FFFFFF;
+  --mp-paper-soft: #F5F5F5;   /* fundo alternado de seções */
+  --mp-line:       #E5E5E5;   /* bordas de cards em fundo claro */
+  --mp-line-dark:  rgba(255, 255, 255, 0.1);
+  --mp-body:       #4A4A4A;   /* texto corrido em fundo claro */
+  --mp-mid:        #666666;   /* texto secundário, captions */
+  --mp-muted-dark: #A3A3A3;   /* texto secundário em fundo escuro */
+
+  /* Funcionais (SÓ antes/depois e WhatsApp) */
+  --mp-red:        #CC3333;
+  --mp-green:      #339933;
+  --mp-whatsapp:   #25D366;
+
+  /* Movimento */
+  --mp-easing: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@theme inline {
+  --color-mp-gold: var(--mp-gold);
+  --color-mp-gold-deep: var(--mp-gold-deep);
+  --color-mp-gold-soft: var(--mp-gold-soft);
+  --color-mp-ink: var(--mp-ink);
+  --color-mp-ink-deep: var(--mp-ink-deep);
+  --color-mp-paper: var(--mp-paper);
+  --color-mp-soft: var(--mp-paper-soft);
+  --color-mp-line: var(--mp-line);
+  --color-mp-line-dark: var(--mp-line-dark);
+  --color-mp-body: var(--mp-body);
+  --color-mp-mid: var(--mp-mid);
+  --color-mp-muted-dark: var(--mp-muted-dark);
+  --color-mp-red: var(--mp-red);
+  --color-mp-green: var(--mp-green);
+  --color-mp-whatsapp: var(--mp-whatsapp);
+
+  --font-heading: var(--font-montserrat), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Reset / base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--mp-paper);
+  color: var(--mp-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* Focus visível padrão */
+:focus-visible {
+  outline: 2px solid var(--mp-gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Botão sem default feio */
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Selection */
+::selection {
+  background: var(--mp-gold);
+  color: var(--mp-ink-deep);
+}
+
+/* Reduced motion: respeita preferência */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.12s !important;
+    scroll-behavior: auto !important;
+  }
+}

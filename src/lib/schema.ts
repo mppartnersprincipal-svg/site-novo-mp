@@ -19,6 +19,7 @@ export const diagnosticoSchema = z.object({
   whatsapp: z
     .string()
     .min(1, "Informe seu WhatsApp")
+    .max(30, "WhatsApp inválido — use DDD + número")
     .transform((v) => v.replace(/\D/g, ""))
     .refine(
       (v) => /^(?:55)?[1-9]\d{9,10}$/.test(v),
